@@ -1,6 +1,12 @@
-import webbrowser
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+import time
 
-url = 'https://web.whatsapp.com'
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+time.sleep(5)
 
-webbrowser.open_new_tab(url)
-#webbrowser.open_new(url)
+driver.get('https://web.whatsapp.com')
+
+time.sleep(5)
+driver.quit()
